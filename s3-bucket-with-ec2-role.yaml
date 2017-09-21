@@ -2,10 +2,10 @@ AWSTemplateFormatVersion: 2010-09-09
 Description: This template creates an S3 bucket and a role to access said bucket.
 Parameters:
   ClusterBucketName:
-    Description: Name of the S3bucket you want to create to be used for JBoss S3_Ping
+    Description: Name of the S3bucket you want to create.
     Type: String
   IAMRoleName:
-    Description: Name of the IAM role to be used by the cluster nodes to access the S3 bucket.
+    Description: Name of the IAM role to be used to access the S3 bucket.
     Type: String
 Resources:
   ClusterBucket:
