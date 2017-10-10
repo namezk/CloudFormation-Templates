@@ -682,7 +682,7 @@
             "Type": "AWS::CloudFormation::Stack",
             "DependsOn": "SQLStack",
             "Properties": {
-                "TemplateURL": "https://s3.amazonaws.com/quickstart-reference/microsoft/sharepoint/latest/templates/Template_1_SharePoint_2016.template",
+                "TemplateURL": "https://raw.githubusercontent.com/namezk/CloudFormation-Templates/master/SP/Template_1_SharePoint_2016.template",
                 "Parameters": {
                     "ADServer1PrivateIP": {
                         "Ref": "ADServer1PrivateIP"
