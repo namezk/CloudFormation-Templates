@@ -360,7 +360,7 @@
                 "WS2012R2": "ami-d79d92c1"
             },
             "us-east-2": {
-                "WS2012R2": "ami-5d99b938"
+                "WS2012R2": "ami-ceaa8bab"
             },
             "us-west-1": {
                 "WS2012R2": "ami-b31c32d3"
