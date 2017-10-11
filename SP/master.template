@@ -508,7 +508,7 @@
         "ADStack": {
             "Type": "AWS::CloudFormation::Stack",
             "Properties": {
-                "TemplateURL": "https://s3.amazonaws.com/quickstart-reference/microsoft/activedirectory/latest/templates/Template_1_AD_2012R2.template",
+                "TemplateURL": "https://s3.us-east-2.amazonaws.com/sharepoint-templates-kn/Template_1_AD_2012R2.template",
                 "Parameters": {
                     "ADServer1InstanceType": {
                         "Ref": "ADServer1InstanceType"
@@ -571,7 +571,7 @@
             "Type": "AWS::CloudFormation::Stack",
             "DependsOn": "ADStack",
             "Properties": {
-                "TemplateURL": "https://s3.amazonaws.com/quickstart-reference/microsoft/sql/latest/templates/Template_1_SQL_AlwaysOn.template",
+                "TemplateURL": "https://s3.us-east-2.amazonaws.com/sharepoint-templates-kn/Template_1_SQL_AlwaysOn.template",
                 "Parameters": {
                     "ADServer1PrivateIp": {
                         "Ref": "ADServer1PrivateIP"
@@ -682,7 +682,7 @@
             "Type": "AWS::CloudFormation::Stack",
             "DependsOn": "SQLStack",
             "Properties": {
-                "TemplateURL": "https://raw.githubusercontent.com/namezk/CloudFormation-Templates/master/SP/Template_1_SharePoint_2016.template",
+                "TemplateURL": "https://s3.us-east-2.amazonaws.com/sharepoint-templates-kn/Template_1_SharePoint_2016.template",
                 "Parameters": {
                     "ADServer1PrivateIP": {
                         "Ref": "ADServer1PrivateIP"
