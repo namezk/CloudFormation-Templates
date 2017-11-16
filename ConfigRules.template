@@ -1,0 +1,62 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Creates Config rules for check for encrypted EBS volumes and ",
+    
+    "Resources": {
+       
+        "ec2EncryptionRule": {
+            "Type": "AWS::Config::ConfigRule",
+            "Properties": {
+                "ConfigRuleName": "EBS-Encryption-Rule",
+                "Description": "Checks whether EBS volumes that are in an attached state are encrypted.",
+                "Scope": {
+                    "ComplianceResourceTypes": ["AWS::EC2::Volume"]
+                },
+                "Source": {
+                    "Owner": "AWS",
+                    "SourceDetails": [],
+                    "SourceIdentifier": "ENCRYPTED_VOLUMES"
+                }
+            }
+        },
+    
+        "S3PublicReadable": {
+            "Type": "AWS::Config::ConfigRule",
+            "Properties": {
+                "ConfigRuleName": "S3-Public-Readable",
+                "Description": "Checks that your S3 buckets do not allow public read access. If an S3 bucket policy or bucket ACL allows public read access, the bucket is noncompliant.",
+                "Scope": {
+                    "ComplianceResourceTypes": ["AWS::S3::Bucket"]
+                },
+                "Source": {
+                    "Owner": "AWS",
+                    "SourceDetails": [],
+                    "SourceIdentifier": "S3_BUCKET_PUBLIC_READ_PROHIBITED"
+                }
+            }
+        },
+        "S3PublicWritable": {
+            "Type": "AWS::Config::ConfigRule",
+            "Properties": {
+                "ConfigRuleName": "S3-Public-Writable",
+                "Description": "Checks that your S3 buckets do not allow public write access. If an S3 bucket policy or bucket ACL allows public write access, the bucket is noncompliant.",
+                "Scope": {
+                    "ComplianceResourceTypes": ["AWS::S3::Bucket"]
+                },
+                "Source": {
+                    "Owner": "AWS",
+                    "SourceDetails": [],
+                    "SourceIdentifier": "S3_BUCKET_PUBLIC_WRITE_PROHIBITED"
+                }
+            }
+        }    
+    },
+
+    "Outputs": {
+        "StackName": {
+            "Value": {
+                "Ref": "AWS::StackName"
+            }
+        }
+    }
+}
