@@ -1,6 +1,6 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
-    "Description": "Creates Config rules for check for encrypted EBS volumes and ",
+    "Description": "Creates Config rules for check for encrypted EBS volumes and publically accessible S3 buckets ",
     
     "Resources": {
        
