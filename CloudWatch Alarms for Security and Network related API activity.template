@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion" : "2010-09-09",
-  "Description" : "AWS CloudTrail API Activity Alarm Template for CloudWatch Logs",
+  "Description" : "Set alarms for suspecious API Activity",
   "Parameters" : {
       "LogGroupName" : {
           "Type" : "String",
