@@ -347,6 +347,7 @@
                                 "\n",
                                 "yum update -y\n",
                                 "yum upgrade -y\n",
+                                "yum install -y ruby24\n",
                                 "# Install Java then Jenkins\n",
 				                "yum install -y java-1.8.0\n",
                                 "/usr/sbin/alternatives --set java /usr/lib/jvm/jre-1.8.0-openjdk.x86_64/bin/java || true\n",
