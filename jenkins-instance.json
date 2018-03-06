@@ -1,6 +1,6 @@
 {
     "AWSTemplateFormatVersion" : "2010-09-09",
-    "Description"              : "Jenkins Server",
+    "Description"              : "Installs Jenkins with nginx, jdk 1.8, and various jenkins plugins, CFN-Nag, and creates a Route53 subdomain",
     "Parameters"               : {
         "InstanceType" : {
             "Description" : "EC2 instance type for Jenkins Server",
@@ -348,6 +348,8 @@
                                 "yum update -y\n",
                                 "yum upgrade -y\n",
                                 "yum install -y ruby24\n",
+                                "yum remove -y ruby20\n",
+                                "gem install cfn-nag\n",
                                 "# Install Java then Jenkins\n",
 				                "yum install -y java-1.8.0\n",
                                 "/usr/sbin/alternatives --set java /usr/lib/jvm/jre-1.8.0-openjdk.x86_64/bin/java || true\n",
@@ -379,10 +381,12 @@
 								"curl -O -L https://updates.jenkins-ci.org/latest/rake.hpi\n",
                                 "curl -O -L https://updates.jenkins-ci.org/latest/plain-credentials.hpi\n",
                                 "curl -O -L https://updates.jenkins-ci.org/latest/aws-credentials.hpi\n",
+                                "curl -O -L https://updates.jenkins-ci.org/latest/aws-java-sdk.hpi\n",
                                 "curl -O -L https://updates.jenkins-ci.org/latest/jenkins-cloudformation-plugin.hpi\n",
                                 "chown jenkins:jenkins *.hpi\n",
                                 "# Restarting Jenkins\n",
-                                "service jenkins restart\n"
+                                "service jenkins restart\n",
+                                "reboot"
                             ]
                         ]
                     }
